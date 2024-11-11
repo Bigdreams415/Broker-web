@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'ac7702e27237d39dfaf350f8dc6e7374c520e5ba';
+        window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        })(document);
+        </script>
+        <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a>
+    </noscript>
+  <link rel="stylesheet" href="App.css">
+</head>
+<body>
+
+  <!-- Sidebar/Menu -->
+  <div class="sidebar">
+    <h2>Trade Wave</h2>
+    <ul>
+      <li><a href="#portfolio" id="portfolio-menu" class="active"><span class="icon">&#128176;</span> Portfolio</a></li>
+      <li><a href="#market" id="market-menu"><span class="icon">&#128200;</span> Market</a></li>
+      <li><a href="#trade" id="trading-menu"><span class="icon">&#128178;</span> Trade</a></li>
+      <li><a href="#transactions" id="transaction-menu"><span class="icon">&#128179;</span> Transactions</a></li>
+      <li><a href="#settings" id="settings-menu"><span class="icon">&#9881;</span> Settings</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="scroll-indicator"></div>
+  <div class="main-content">
+    
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+      <input type="text" placeholder="Search...">
+      <div class="user-info">
+        <span class="notification">&#128276;</span>
+        <span class="profile">👤</span>
+      </div>
+    </div>
+
+
+    <div class="user-info-box">
+        <div class="user-info">
+            <span class="welcome-text">Welcome, <strong id="username">Username</strong>!</span>
+        </div>
+        <div class="user-uid-container">
+            <span class="uid-text">UID:</span>
+            <span id="userUid" class="uid-value"> </span>
+        </div>
+    </div>
+    
+    
+    <!-- Portfolio Section -->
+    <div class="content-section" id="portfolio">
+        <h1>Portfolio Overview</h1>
+        <div class="portfolio-summary">
+          <div class="balance">
+            <h2>Total Balance</h2>
+            <p id="total-balance">$0.00</p>
+          </div>
+          <div class="actions">
+            <button class="btn deposit-btn">Deposit</button>
+            <button class="btn withdraw-btn">Withdraw</button>
+          </div>
+        </div>
+      
+        <h3>Your Holdings</h3>
+        <div class="holdings">
+          <!-- Holdings List (to be populated dynamically) -->
+        </div>
+    </div>
+
+    <!-- Market Data Section -->
+    <div class="content-section" id="market-data" style="display: none;">
+        <h1>Market Data</h1>
+        <div class="market-list" id="market-list">
+          <!-- Market data will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Trade Section -->
+    <div class="content-section" id="trade" style="display: none;">
+        <!-- <div class="progress-bar" id="scrollProgress"></div> -->
+        <h1>Trade and Invest</h1>
+        <p class="trade-intro">Explore a wide range of investment options, from precious metals to real estate. Grow your wealth with confidence.</p>
+        
+        <!-- Precious Metals -->
+        <h2>Invest in Precious Metals</h2>
+        <div class="asset-grid">
+        <div class="asset-card" data-asset="Gold">
+            <img src="images/gold.jpeg" alt="Precious Metals Trend" class="category-chart">
+            <div class="asset-name">Gold</div>
+            <button class="invest-btn">Invest</button>
+        </div>
+        <div class="asset-card" data-asset="Silver">
+            <img src="images/1000-grams-pure-silver-bars-and-coins.webp" alt="Precious Metals Trend" class="category-chart">
+            <div class="asset-name">Silver</div>
+            <button class="invest-btn">Invest</button>
+        </div>
+        <div class="asset-card" data-asset="Platinum">
+            <img src="images/plantinum.jpg" alt="Precious Metals Trend" class="category-chart">
+            <div class="asset-name">Platinum</div>
+            <button class="invest-btn">Invest</button>
+        </div>
+        </div>
+
+        <!-- Cryptocurrencies -->
+        <h2>Invest in Cryptocurrencies</h2>
+        <div class="asset-grid">
+        <div class="asset-card" data-asset="Bitcoin">
+            <img src="images/1.png" alt="Cryptocurrency Trend" class="category-chart">
+            <div class="asset-name">Bitcoin (BTC)</div>
+            <button class="invest-btn">Invest</button>
+        </div>
+        <div class="asset-card" data-asset="Ethereum">
+            <img src="images/eth trend.png" alt="Cryptocurrency Trend" class="category-chart">
+            <div class="asset-name">Ethereum (ETH)</div>
+            <button class="invest-btn">Invest</button>
+        </div>
+        <div class="asset-card" data-asset="Solana">
+            <img src="images/sol.jpg" alt="Cryptocurrency Trend" class="category-chart">
+            <div class="asset-name">Solana (SOL)</div>
+            <button class="invest-btn">Invest</button>
+        </div>
+        </div>
+
+        <!-- Real Estate -->
+        <h2>Invest in Real Estate</h2>
+        <div class="asset-grid">
+            <div class="asset-card" data-asset="RealEstate">
+                <img src="images/real estate 1.jpeg" alt="Real Estate Trend" class="category-chart">
+                <div class="asset-name">Real Estate Fund</div>
+                <button class="invest-btn">Invest</button>
+            </div>
+            <div class="asset-card" data-asset="RealEstate">
+                <img src="images/real estate 2.jpg" alt="Real Estate Trend" class="category-chart">
+                <div class="asset-name">Real Estate Fund</div>
+                <button class="invest-btn">Invest</button>
+            </div>
+            <div class="asset-card" data-asset="RealEstate">
+                <img src="images/real estate 3.jpg" alt="Real Estate Trend" class="category-chart">
+                <div class="asset-name">Real Estate Fund</div>
+                <button class="invest-btn">Invest</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investment Modal -->
+    <div id="investmentModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3>Invest in <span id="modalAssetName"></span></h3>
+            <img src="path/to/asset-icon.png" alt="" id="assetImage" class="asset-image">
+            
+            <!-- Form Section with Dollar Sign, Placeholders, and Instructions -->
+            <div class="form-group">
+                <label for="investmentAmount">Enter Investment Amount</label>
+                <div class="input-wrapper">
+                    <span class="input-prefix">$</span>
+                    <input type="number" id="investmentAmount" placeholder="e.g., 1000" min="1">
+                </div>
+                <small class="input-instructions">Enter the amount you'd like to invest in USD.</small>
+            </div>
+
+            <!-- Button with Animations -->
+            <button class="invest-btn animated-btn">Confirm Investment</button>
+        </div>
+    </div>
+
+
+
+    <!-- Transactions Section -->
+    <div class="content-section" id="transactions" style="display: none;">
+        <h1>Transaction History</h1>
+        
+        <!-- Transaction Filters -->
+        <div class="transaction-filters">
+        <label for="transaction-type">Type:</label>
+        <select id="transaction-type">
+            <option value="all">All</option>
+            <option value="deposit">Deposit</option>
+            <option value="withdrawal">Withdrawal</option>
+            <option value="investment">Investment</option>
+        </select>
+    
+        <label for="transaction-status">Status:</label>
+        <select id="transaction-status">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+        </select>
+    
+        <label for="transaction-date">Date Range:</label>
+        <input type="date" id="start-date">
+        <span>to</span>
+        <input type="date" id="end-date">
+        <button class="filter-btn">Apply Filters</button>
+        </div>
+    
+        <!-- Transaction Table -->
+        <div class="transaction-table">
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Asset</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Details</th>
+            </tr>
+            </thead>
+            <tbody id="transaction-records">
+            <!-- Dynamic content will be injected here -->
+            </tbody>
+        </table>
+        </div>
+    
+        <!-- Pagination -->
+        <div class="pagination">
+        <button class="page-btn" disabled>&laquo; Previous</button>
+        <button class="page-btn">Next &raquo;</button>
+        </div>
+    
+        <!-- No Transactions Message -->
+        <div id="no-transactions" style="display: none;">
+        <p>No transactions found. Start investing or making deposits to see activity here.</p>
+        </div>
+    </div>
+    
+
+
+ 
+
+    <!-- Deposit Modal (Initially Hidden) -->
+    <div class="deposit-modal" style="display: none;">
+        <div class="deposit-modal-content">
+            <span class="close-deposit">&times;</span>
+            <h2>Deposit Funds</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="deposit-tabs">
+                <button class="tab-link active" data-tab="bank-transfer">Bank Transfer</button>
+                <button class="tab-link" data-tab="credit-card">Credit/Debit Card</button>
+                <button class="tab-link" data-tab="crypto">Cryptocurrency</button>
+                <button class="tab-link" data-tab="digital-wallet">Digital Wallet</button>
+            </div>
+
+            <!-- Tab Content Sections -->
+            <!-- Tab contents are initially hidden, only the selected one will display -->
+            <div class="tab-content active" id="bank-transfer">
+                <!-- Content here will be replaced by JavaScript -->
+            </div>
+            <div class="tab-content" id="credit-card">
+                <!-- Content here will be replaced by JavaScript -->
+            </div>
+            <div class="tab-content" id="crypto">
+                <!-- Content here will be replaced by JavaScript -->
+            </div>
+            <div class="tab-content" id="digital-wallet">
+                <!-- Content here will be replaced by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Settings Page Section -->
+    <div class="content-section" id="settings" style="display: none;">
+        <div class="settings-section">
+            <h2>Settings</h2>
+            
+            <!-- Change Password Section -->
+            <div class="settings-block">
+                <h3>Change Password</h3>
+                <label for="current-password">Current Password</label>
+                <input type="password" id="current-password" placeholder="Enter current password">
+                
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" placeholder="Enter new password">
+                
+                <label for="confirm-password">Confirm New Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm new password">
+                
+                <button class="btn">Change Password</button>
+            </div>
+    
+            <!-- Notification Preferences Section -->
+            <div class="settings-block">
+                <h3>Notification Preferences</h3>
+                <label for="email-notifications">Email Notifications</label>
+                <input type="checkbox" id="email-notifications"> Enable email notifications
+                
+                <label for="sms-notifications">SMS Notifications</label>
+                <input type="checkbox" id="sms-notifications"> Enable SMS notifications
+                
+                <button class="btn">Save Preferences</button>
+            </div>
+    
+            <!-- Update User Information Section -->
+            <div class="settings-block">
+                <h3>Update User Information</h3>
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" placeholder="Enter full name">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter email">
+                
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" placeholder="Enter phone number">
+                
+                <button class="btn">Update Information</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    
+  <script src="app.js"></script>
+</body>
+</html>

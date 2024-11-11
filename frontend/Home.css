@@ -1,0 +1,487 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e2f;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.navbar .auth-buttons .btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.login-btn {
+    background-color: #555;
+}
+
+.signup-btn {
+    background-color: #ff6347;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('images/pexels-anntarazevich-14751274.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    background-color: #ff4500;
+}
+
+
+/* Investment Categories Section */
+#investment-categories {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#investment-categories h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.category-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-info {
+    padding: 20px;
+}
+
+.category-info h3 {
+    font-size: 1.8em;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.category-info p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.category-info .btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-info .btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Why Choose Us Section */
+#why-choose-us {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#why-choose-us h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#why-choose-us p {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.benefits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.benefit-card {
+    width: 280px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card .icon {
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.benefit-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+
+/* Featured Assets Section */
+#featured-assets {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f0f4f8;
+}
+
+#featured-assets h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#featured-assets p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.assets-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.asset-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.asset-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.asset-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.asset-card h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin: 15px 0 10px;
+}
+
+.asset-card p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 15px;
+}
+
+.explore-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Start Trading in 4 Steps Section */
+.start-trading-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.start-trading-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.step {
+    width: 220px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1a73e8;
+}
+
+.step p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.video-container {
+    width: 100%;
+    height: 120px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: #888;
+    font-size: 16px;
+}
+
+/* Animations */
+.step[data-step="1"] {
+    animation: fadeIn 0.5s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.step[data-step="2"] {
+    animation: fadeIn 0.5s ease 0.4s forwards;
+    opacity: 0;
+}
+
+.step[data-step="3"] {
+    animation: fadeIn 0.5s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.step[data-step="4"] {
+    animation: fadeIn 0.5s ease 0.8s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #1d1f27;
+    color: #d0d1d5;
+    padding: 30px 20px;
+    text-align: left;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+  
+  .footer-column p,
+  .footer-column ul {
+    font-size: 0.9em;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin: 6px 0;
+  }
+  
+  .footer-column ul li a {
+    color: #d0d1d5;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #76c7c0;
+  }
+  
+  /* Social Media Icons */
+  .social-icons a {
+    color: #d0d1d5;
+    font-size: 1.3em;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #76c7c0;
+  }
+  
+  /* Newsletter Signup */
+  .footer-newsletter {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer-newsletter input[type="email"] {
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin-right: 5px;
+  }
+  
+  .footer-newsletter button {
+    background-color: #76c7c0;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #5da39f;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #333;
+    font-size: 0.85em;
+    margin-top: 20px;
+  }
+  

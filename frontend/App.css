@@ -1,0 +1,950 @@
+/* Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  /* Sidebar Styling */
+  .sidebar {
+    width: 250px;
+    background-color: #1e1e2f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .sidebar h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ff8000;
+  }
+  .sidebar ul {
+    list-style: none;
+    width: 100%;
+  }
+  .sidebar li {
+    width: 100%;
+  }
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .sidebar a:hover, .sidebar a.active {
+    background-color: #333354;
+    color: #ff8000;
+  }
+  .icon {
+    margin-right: 10px;
+  }
+  
+  /* Main Content and Top Navigation Styling */
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .top-nav input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  .user-info .notification, .user-info .profile {
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  /* Content Section Styling */
+  .content-section {
+    padding: 20px;
+  }
+  .content-section h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  .content-section p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+
+  /* Portfolio Section Styling */
+.portfolio-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .balance h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  .balance p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff8000;
+  }
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  .actions .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .deposit-btn {
+    background-color: #4CAF50;
+  }
+  .withdraw-btn {
+    background-color: #FF5733;
+  }
+  .holdings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .holdings .holding {
+    flex: 1 1 calc(33.333% - 15px);
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .holdings .holding h4 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  .holdings .holding p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+
+
+  /* .uid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .uid h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  .uid p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff8000;
+    margin: 10px 0;
+  }
+  .uid .copy-btn {
+    background-color: #007BFF;  
+  }
+   */
+
+  .content-section {
+    display: none; /* Hide all content sections by default */
+  }
+
+  .content-section {
+    flex: 1;
+    overflow-y: auto; /* Vertical scrolling within this section */
+    padding: 20px;
+}
+  
+  #portfolio {
+    display: block; /* Show the portfolio by default */
+  }
+  
+
+  /* Market Data */
+
+  .market-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .market-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .market-item h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .market-item button {
+    background-color: #28a745; /* Bootstrap Success Color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .market-item button:hover {
+    background-color: #218838; /* Darker shade on hover */
+  }
+  
+ 
+
+/* Trade and Invest Section */
+#trade {
+    display: none;  
+    padding: 20px;
+}
+
+/* Section Titles */
+#trade h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#trade h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Asset Grid Styling */
+.asset-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Asset Card Styling */
+.asset-card {
+    flex: 1 1 calc(33.333% - 15px);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.asset-card:hover {
+    transform: scale(1.05);
+}
+
+.asset-name {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Invest Button Styling */
+.invest-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.invest-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Investment Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Close Button Styling */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+
+/* Input Wrapper for Dollar Sign */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .input-prefix {
+    color: #888;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  #investmentAmount {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Placeholder Instructions */
+  .input-instructions {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+  
+  /* Button Animation */
+  .animated-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .animated-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+
+  /* Introductory Message */
+.trade-intro {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Category Chart */
+.category-chart {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto 20px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Real Estate Card (in asset-grid) */
+.asset-card[data-asset="RealEstate"] {
+    background-color: #eaf4fc; /* Light blue for real estate */
+}
+
+/* Modal Asset Image */
+.asset-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+
+  /* Transactions Section Styling */
+#transactions {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Heading */
+  #transactions h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Transaction Filters Styling */
+  .transaction-filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .transaction-filters label {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .transaction-filters select,
+  .transaction-filters input[type="date"],
+  .transaction-filters .filter-btn {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .transaction-filters .filter-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .transaction-filters .filter-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Transaction Table Styling */
+  .transaction-table {
+    margin-top: 10px;
+    overflow-x: auto; /* Allows scrolling on small screens */
+  }
+  
+  .transaction-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transaction-table th, .transaction-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .transaction-table th {
+    background-color: #333354;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .transaction-table td {
+    color: #333;
+  }
+  
+  .transaction-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .transaction-table .details-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .transaction-table .details-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Pagination Styling */
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
+  }
+  
+  .pagination .page-btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination .page-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination .page-btn:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  /* No Transactions Message */
+  #no-transactions {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #666;
+  }
+  
+
+  /* Progress Bar */
+/* .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: #007BFF;
+    transition: width 0.1s ease;
+    z-index: 1000;  
+} */
+
+
+/* Style the scroll indicator bar */
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px; /* Increase the height for better visibility */
+    background-color: #ff6347; /* Use a noticeable color like tomato red */
+    z-index: 120000;
+    transition: width 0.2s ease; /* Smooth animation as you scroll */
+}
+
+
+
+/* Deposit Modal Styling */
+.deposit-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.deposit-modal-content {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Icon */
+.close-deposit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-deposit:hover {
+    color: #333;
+}
+
+/* Modal Heading */
+.deposit-modal-content h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Tab Navigation Styling */
+.deposit-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #888;
+}
+
+.tab-link.active, .tab-link:hover {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+}
+
+/* Tab Content Styling */
+.tab-content {
+  display: none;
+  padding: 15px 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Styling for deposit method details */
+.tab-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-line; /* Ensures line breaks from <br> tags are respected */
+  margin: 10px 0;
+}
+
+/* Add spacing and emphasis for each line if needed */
+.tab-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #007BFF;
+}
+
+/* Copy Button Styling */
+.copy-btn {
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #0056b3;
+}
+
+/* QR Code Styling */
+#crypto-qr-code {
+  margin: 15px 0;
+  text-align: center;
+}
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Style for the copy icon */
+span[title="Copy to clipboard"] {
+  font-size: 0.9rem;
+  color: #007BFF;
+}
+
+span[title="Copy to clipboard"]:hover {
+  color: #0056b3;
+}
+
+/* Style for the QR code container */
+#crypto-qr {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.detail-key {
+  font-weight: bold;
+  color: #333;
+}
+
+.detail-value {
+  color: #555;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.copy-icon {
+  cursor: pointer;
+  color: #007BFF;
+  transition: color 0.3s;
+}
+
+.copy-icon:hover {
+  color: #0056b3;
+}
+
+
+.copy-icon {
+    font-size: 1rem;
+    color: #007BFF;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.copy-icon:hover {
+    color: #0056b3;
+}
+
+.qr-code {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.qr-code canvas {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* UID section */
+
+ /* Container holding the entire user info section */
+ .user-info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px 30px;  /* Reduced top/bottom padding (from 30px to 20px) */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 95%;  /* Reduced width (from 100% to 90%) */
+  max-width: 1100px;  /* Reduced max-width (from 1200px to 1000px) */
+  margin: 20px auto;  /* Reduced margin-top and margin-bottom (from 30px to 20px) */
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the entire container */
+.user-info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the welcome text section */
+.user-info {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Styling for the username */
+.welcome-text strong {
+  color: #007bff; /* Highlight the username in blue */
+}
+
+/* Styling for the UID container */
+.user-uid-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  gap: 20px;  /* Reduced gap (from 30px to 20px) */
+}
+
+/* Styling for the UID label */
+.uid-text {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Styling for the UID value */
+.uid-value {
+  font-weight: 700;
+  color: #28a745; /* Green color for UID */
+  font-size: 18px;
+}
+
+/* Optional: Slight hover effect on UID value */
+.uid-value:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Settings Page/Tab */
+/* Settings Section */
+.settings-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Settings Block - Individual Settings Form Elements */
+.settings-block {
+  margin-bottom: 20px;
+}
+
+.settings-block h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.settings-block label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.settings-block input[type="text"],
+.settings-block input[type="email"],
+.settings-block input[type="password"],
+.settings-block input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for Checkbox */
+.settings-block input[type="checkbox"] {
+  width: auto;
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+/* Button Styles */
+.settings-block button,
+.settings-section .btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settings-block button:hover,
+.settings-section .btn:hover {
+  background-color: #45a049;
+}
+
+/* Input field for updating user information */
+.settings-block input[type="text"],
+.settings-block input[type="email"],
+.settings-block input[type="password"] {
+  max-width: 400px;
+  margin-right: 10px;
+}
+
+.settings-block input[type="checkbox"] {
+  width: auto;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .settings-section {
+      padding: 15px;
+  }
+
+  .settings-block input[type="text"],
+  .settings-block input[type="email"],
+  .settings-block input[type="password"],
+  .settings-block input[type="number"] {
+      font-size: 0.9rem;
+  }
+
+  .settings-section h2 {
+      font-size: 1.5rem;
+  }
+}

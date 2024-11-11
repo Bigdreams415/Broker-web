@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="#" id="manage-deposits" class="active">Manage Deposits</a></li>
+            <li><a href="#" id="manage-holdings">Manage Holdings</a></li>
+            <!-- Future sections can go here -->
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">    
+        
+        <!-- Form to Add/Update Deposit Details -->
+        <section id="deposit-form-section">
+            <header>
+                <h1>Deposit Management</h1>
+                <p>Manage deposit methods and account information</p>
+            </header>
+
+            <h2>Add or Update Deposit Method</h2>
+            <form id="deposit-form">
+                <label for="method">Method:</label>
+                <select id="method" required>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="Credit/Debit Card">Credit/Debit Card</option>
+                    <option value="Cryptocurrency">Cryptocurrency</option>
+                    <option value="Digital Wallet">Digital Wallet</option>
+                </select>
+
+                <label for="details">Details:</label>
+                <textarea id="details" rows="5" placeholder="Enter details in key-value pairs, e.g., 'Account No: 123456'"></textarea>
+
+                <button type="submit" class="submit-btn">Save Deposit Method</button>
+            </form>
+            <div id="response-message" class="hidden"></div>
+
+             <!-- Section to Display Current Deposit Methods -->
+            <section id="deposit-list-section">
+                <h2>Current Deposit Methods</h2>
+                <ul id="deposit-list"></ul>
+            </section>
+        </section>
+
+
+
+        <!-- Manage Holdings Section (hidden by default) -->
+        <div id="manage-holdings-section" class="dashboard-section" style="display: none;">
+            <!-- Search User Section -->
+            <div class="search-section">
+                <input type="text" id="uid-search" placeholder="Enter User UID">
+                <button class="btn" id="search-btn">Search</button>
+            </div>
+
+            <!-- User Info & Balance -->
+            <div class="user-info-section">
+                <h2>User Info</h2>
+                <p><strong>Full Name:</strong> <span id="user-name"></span></p>
+                <p><strong>Username:</strong> <span id="user-username"></span></p>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+
+                <label for="total-balance">Total Balance:</label>
+                <input type="number" id="total-balance" placeholder="Update balance" step="0.01">
+
+                <button class="btn" id="update-balance-btn">Update Balance</button>
+            </div>
+
+            <!-- Holdings Section -->
+            <div class="user-holdings-section">
+                <h2>User Holdings</h2>
+
+                <!-- Form to Add/Edit Holdings -->
+                <div id="add-holding-form">
+                    <h3>Add Holding</h3>
+                    <input type="text" id="holding-name" placeholder="Asset Name" required>
+                    <input type="text" id="holding-symbol" placeholder="Asset Symbol (e.g., BTC)" required>
+                    <input type="number" id="holding-amount" placeholder="Amount" required>
+                    <input type="number" id="holding-value" placeholder="Value" required>
+                    <button class="btn" id="add-holding-btn">Add Holding</button>
+                </div>
+
+                <h3>Existing Holdings</h3>
+                <div id="holdings-list"></div>
+            </div>
+
+            <!-- Feedback Messages -->
+            <div id="feedback-msg" class="feedback-msg"></div>
+        </div>
+
+    </main>
+    
+    <script src="admin.js"></script>
+</body>
+</html>
