@@ -167,6 +167,61 @@
     background-color: #45a049;
 }
 
+/* mobile layout for Navbar Hero section and Categories section */
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav ul li {
+        margin: 5px 0;
+    }
+
+    .auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+        padding: 0 20px;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    /* Investment Categories Section */
+    .categories-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
 
 /* Why Choose Us Section */
 #why-choose-us {
@@ -387,6 +442,102 @@
     }
 }
 
+/* mobile version for the next 3 sections which are why choose us, featured trading and start trading in 4 steps */
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+
+    /* Why Choose Us Section */
+    #why-choose-us {
+        padding: 40px 15px;
+    }
+
+    #why-choose-us h2 {
+        font-size: 1.8em;
+    }
+
+    #why-choose-us p {
+        font-size: 1em;
+    }
+
+    .benefits-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .benefit-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Featured Assets Section */
+    #featured-assets {
+        padding: 40px 15px;
+    }
+
+    #featured-assets h2 {
+        font-size: 1.8em;
+    }
+
+    #featured-assets p {
+        font-size: 1em;
+    }
+
+    .assets-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .asset-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .asset-image {
+        height: auto;
+    }
+
+    .explore-btn {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    /* Start Trading in 4 Steps Section */
+    .start-trading-section {
+        padding: 40px 15px;
+    }
+
+    .start-trading-section h2 {
+        font-size: 1.8em;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .step {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .step h3 {
+        font-size: 1.2em;
+    }
+
+    .step p {
+        font-size: 0.9em;
+    }
+
+    .video-container {
+        height: 100px;
+        font-size: 14px;
+    }
+}
+
 
 /* Footer Styling */
 .footer {
@@ -485,3 +636,56 @@
     margin-top: 20px;
   }
   
+  /* mobile view for footer */
+
+  /* Mobile Responsive Footer */
+@media (max-width: 768px) {
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        max-width: 90%;
+        margin: 15px 0;
+    }
+
+    .footer-column h3 {
+        font-size: 1em;
+    }
+
+    .footer-column p, .footer-column ul {
+        font-size: 0.9em;
+    }
+
+    /* Social Media Icons */
+    .social-icons a {
+        font-size: 1.2em;
+        margin: 0 8px;
+    }
+
+    /* Newsletter Signup */
+    .footer-newsletter {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .footer-newsletter input[type="email"] {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .footer-newsletter button {
+        width: 60%;
+        padding: 10px;
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+}

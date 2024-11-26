@@ -202,14 +202,14 @@ app.post('/login', async (req, res) => {
         }
 
         // Create JWT token
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
         res.json({ token });
     } catch (error) {
         console.error("Error during login:", error);
         res.status(500).json({ message: 'Server error' });
     }
-});
+}); 
 
 
 //Backend to get user details

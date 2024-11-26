@@ -798,8 +798,8 @@ span[title="Copy to clipboard"]:hover {
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   width: 95%;  /* Reduced width (from 100% to 90%) */
-  max-width: 1100px;  /* Reduced max-width (from 1200px to 1000px) */
-  margin: 20px auto;  /* Reduced margin-top and margin-bottom (from 30px to 20px) */
+  max-width: 1100px;  
+  margin: 20px auto;   
   font-family: 'Arial', sans-serif;
   transition: all 0.3s ease;
 }
@@ -820,7 +820,7 @@ span[title="Copy to clipboard"]:hover {
 
 /* Styling for the username */
 .welcome-text strong {
-  color: #007bff; /* Highlight the username in blue */
+  color: #007bff; 
 }
 
 /* Styling for the UID container */
@@ -829,7 +829,7 @@ span[title="Copy to clipboard"]:hover {
   align-items: center;
   font-size: 16px;
   color: #333;
-  gap: 20px;  /* Reduced gap (from 30px to 20px) */
+  gap: 20px;  
 }
 
 /* Styling for the UID label */
@@ -851,7 +851,7 @@ span[title="Copy to clipboard"]:hover {
   cursor: pointer;
 }
 
-/* Settings Page/Tab */
+ 
 /* Settings Section */
 .settings-section {
   background-color: #f9f9f9;
